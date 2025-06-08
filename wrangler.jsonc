@@ -1,0 +1,26 @@
+{
+  "name": "cf-worker-shopify",
+  "compatibility_date": "2025-04-01",
+  "compatibility_flags": ["nodejs_compat"],
+  "main": "./server.ts",
+  "assets": {
+    "directory": "./build/client"
+  },
+  "observability": {
+    "enabled": true
+  },
+  "upload_source_maps": true,
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "cf-worker-shopify",
+      "database_id": "6e5e123b-6cde-4ef9-a60f-64e8783d6d5a"  // This placeholder will be replaced during deployment
+    }
+  ],
+  "vars": {
+    "SHOPIFY_API_KEY": "your_api_key_here", // Don't use this in production, use secrets in the dashboard https://developers.cloudflare.com/workers/configuration/secrets/#adding-secrets-to-your-project
+    "SHOPIFY_API_SECRET": "your_api_secret_here", // Don't use this in production, use secrets in the dashboard https://developers.cloudflare.com/workers/configuration/secrets/#adding-secrets-to-your-project
+    "SHOPIFY_APP_URL": "https://example.workers.dev", // adjust as needed
+    "SCOPES": "write_products" // adjust scopes as needed
+  }
+}
